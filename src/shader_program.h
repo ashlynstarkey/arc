@@ -13,6 +13,7 @@ namespace arc {
         shader_program& operator=(const shader_program&) = delete;
 
         unsigned get_uniform_location(const std::string& name);
+        void use();
     private:
         unsigned m_program;
     };

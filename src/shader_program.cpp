@@ -104,4 +104,9 @@ namespace arc {
     {
         return glGetUniformLocation(m_program, name);
     }
+
+    void shader_program::use()
+    {
+        glUseProgram(m_program);
+    }
 }
