@@ -102,7 +102,7 @@ namespace arc {
 
     unsigned shader_program::get_uniform_location(const std::string& name)
     {
-        return glGetUniformLocation(m_program, name);
+        return glGetUniformLocation(m_program, name.c_str());
     }
 
     void shader_program::use()
