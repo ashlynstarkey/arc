@@ -7,7 +7,7 @@ namespace arc {
     class shader_program {
     public:
         shader_program(const std::string& vertex_shader_path, const std::string& fragment_shader_path);
-        ~shader_program();
+        virtual ~shader_program();
 
         shader_program(const shader_program&) = delete;
         shader_program& operator=(const shader_program&) = delete;
