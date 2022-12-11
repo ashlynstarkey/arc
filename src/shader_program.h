@@ -14,8 +14,14 @@ namespace arc {
 
         unsigned get_uniform_location(const std::string& name);
         void use();
+        void set_projection(const float* projection);
+        void set_view(const float* view);
+        void set_model(const float* model);
     private:
         unsigned m_program;
+        unsigned m_projection_loc;
+        unsigned m_view_loc;
+        unsigned m_model_loc;
     };
 }
 

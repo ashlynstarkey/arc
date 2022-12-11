@@ -93,6 +93,10 @@ namespace arc {
             glDeleteProgram(m_program);
             throw std::runtime_error(ss.str());
         }
+
+        m_projection_loc = glGetUniformLocation(m_program, "u_projection");
+        m_view_loc = glGetUniformLocation(m_program, "u_view");
+        m_model_loc = glGetUniformLocation(m_program, "u_model");
     }
 
     shader_program::~shader_program()
@@ -108,5 +112,20 @@ namespace arc {
     void shader_program::use()
     {
         glUseProgram(m_program);
+    }
+
+    void shader_program::set_projection(const float* projection)
+    {
+        glUniformMatrix4fv(m_projection_loc, 1, false, projection);
+    }
+
+    void shader_program::set_view(const float* view)
+    {
+        glUniformMatrix4fv(m_view_loc, 1, false, view);
+    }
+
+    void shader_program::set_model(const float* model)
+    {
+        glUniformMatrix4fv(m_model_loc, 1, false, model);
     }
 }
